@@ -308,6 +308,12 @@ li.silver_meeting_bottomli{
 	padding-left: 20px;
 	color: #fff;
 }
+.meeting_way,.meeting_other{
+	margin-top: 20px;
+}
+.meeting_other{
+	margin-bottom: 30px;
+}
 .cost_detail img, .pay_detail img{
 	width: 920px;
 	height: auto;
@@ -318,20 +324,202 @@ li.silver_meeting_bottomli{
 }
 .pay_detail{
 	height: 199px;
-	margin: 90px 0 90px;
+	margin: 30px 0 70px;
 }
-.meet_description span{
-	font-size: 
+.meet_description span,.meet_attention span{
+	font-size: 36px;
+	line-height: 72px;
+	color: #666;
+}
+.meet_description p,.meet_attention p{
+	font-size: 18px;
+    line-height: 32px;
+    color: #666;
+}
+.addr_attention>p{
+	font-size: 18px;
+	line-height: 32px;
+	color: #666;
+}
+.addr_attention_bottom{
+	margin-bottom: 50px;
+}
+.addr_attention_bottom span{
+	display: inline-block;
+	float: left;
+	width: 18px;
+	height: 56px;
+	background: url(../img/icon_bottom.png) no-repeat;
+}
+.addr_attention_bottom p{
+	font-size: 18px;
+	padding-top: 38px;
+	color: #201f5d;
 }
 
+/*hotel*/
+.hotelContent{
+	width: 920px;
+	padding: 0 10px;
+}
+.hotelContent_topImg:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.hotelContent_header img{
+	width: 920px;
+	height: auto;
+}
+.hotelContent_topImg img{
+	width: 450px;
+	margin-top: 30px;
+}
+.hotelContent_topleftImg{
+	float: left;
+}
+.hotelContent_toprightImg{
+	float: right;	
+}
+.hotel_about{
+	font-size: 30px;
+    line-height: 60px;
+    padding-left: 15px;
+    margin: 20px 0;
+    background: url(../img/hotel_borderline.png) left 46px no-repeat;
+}
+.hotel_description span{
+	font-size: 24px;
+	line-height: 48px;
+}
+.hotel_description{
+	font-size: 18px;
+	line-height: 36px;
+	margin-bottom: 30px;
+}
+.hotel_feature{
+	margin: 60px 0;
+}
+.hotel_feature:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.hotel_feature dl{
+	float: left;
+	width: 211px;
+	margin-left: 15px;
+}
+.hotel_feature dl dd{
+    text-align: center;
+    line-height: 59px;
+    font-size: 16px;
+}
+.hotel_feature img{
+	width: 211px;
+	height: 114px;
+}
+.hotel_location{
+	margin-bottom: 50px;
+}
+.hotel_location:after,.zhuahai_tip_innerwrap:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.hotel_address{
+	float: left;
+	width: 280px;
+	line-height: 32px;
+	font-size: 16px;
+	font-family: SimHei;
+}
+#silver_meeting_location_map{
+	float: right;
+	width: 620px;
+    height: 350px;
+    overflow: hidden;
+    border: 5px solid #333;
+}
 
-
-
-
-
-
-
-
-
-
-
+/*present*/
+.present{
+	width: 920px;
+	padding: 0 10px;
+}
+.present_description{
+	width: 800px;
+	margin: 90px auto;
+	font-size: 24px;
+	line-height: 48px;
+	font-family: SimHei;
+	position: relative;
+}
+.present_span1,.present_span2{
+	position: absolute;
+	width: 35px;
+	height: 32px;
+	display: block;
+}
+.present_span1{
+	left: -40px;
+	top: -13px;
+	background: url(../img/present02.png) no-repeat;
+}
+.present_span2{
+	left: 520px;
+	top: 116px;
+	background: url(../img/present01.png) no-repeat;
+}
+.present_title{
+	height: 100px;
+	font-size: 50px;
+	text-align: center;
+	line-height: 100px;
+	color: #fff;
+	background: #201f5d;
+	margin: 40px 0;
+}
+.present_img{
+	margin-top: 100px;
+	height: 298px;
+}
+.present_img img{
+	width: 920px;
+	height: auto;
+}
+/*zhuhai*/
+.zhuhai_traval{
+	width: 920px;
+	padding: 0 10px;
+}
+.zhuahai_tip,.zhuhai_feature{
+	line-height: 70px;
+	font-size: 40px;
+	text-align: center;
+	color: #fff;
+	font-family: SimHei;
+	background: #201f5d;
+	margin-bottom: 70px;
+}
+.zhuahai_tip_innerwrap{
+	margin-bottom: 50px;
+}
+.zhuahai_tipleft{
+	width: 480px;
+	font-size: 16px;
+	line-height: 32px;
+	float: left;
+	color: #666;
+}
+.zhuahai_tipright{
+	width: 418px;
+	float: right;
+}
+.zhuhai_feature_detail{
+	margin-bottom: 50px;
+}
+.zhuhai_feature_detail img{
+	width: 920px;
+	height: auto;
+}

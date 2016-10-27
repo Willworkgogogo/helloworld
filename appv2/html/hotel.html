@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/base.css">
 	<link rel="stylesheet" type="text/css" href="../css/common.css">
 	<link rel="stylesheet" type="text/css" href="../js/swiper-3.4.0.min.css">
-	<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+	
 	
 	<title>2016第二届全国白银企业年度交流会</title>
 </head>
@@ -13,7 +13,18 @@
 	<div class="wrap">
 		<!-- 头部图片 -->
 		<div class="header">
-			<!-- load... -->
+			<div class="header_bg">
+				<img src="../img/header_bg.png">
+			</div>
+			<ul class="header_nav">
+				<li onclick="window.location.href='/'">首页</li>
+				<li onclick="window.location.href='organizor.html'">承办方</li>
+				<li onclick="window.location.href='planning.html'">会议日程</li>
+				<li onclick="window.location.href='registration.html'">会议注册</li>
+				<li onclick="window.location.href='hotel.html'">会议酒店</li>
+				<li onclick="window.location.href='present.html'">大会礼品</li>
+				<li onclick="window.location.href='zhuhai.html'">珠海风光</li>
+			</ul>
 		</div>
 
 		<!-- 正文 -->
@@ -24,7 +35,58 @@
 			</div>
 			<!-- 中栏 -->
 			<div class="mid_column">
-				
+				<div class="hotelContent">
+					<div class="hotelContent_header">
+						<img src="../img/hotel_header.png">
+					</div>
+					<div class="hotelContent_topImg">
+						<div class="hotelContent_topleftImg">
+							<img src="../img/hotel_intro01.png">
+						</div>
+						<div class="hotelContent_toprightImg">
+							<img src="../img/hotel_intro02.png">
+						</div>						
+					</div>
+					<!-- about hotel -->
+					<div class="hotel_abouthotel">
+						<p class="hotel_about">关于酒店</p>
+						<p class="hotel_description">
+						<span>山海之间 奢华之梦</span><br>
+珠海海湾大酒店屹立于珠海最为繁华的商业地带，主楼楼高十四层，贵宾楼楼高十九层，背靠苍翠欲滴的将军山，面临碧波浩淼的南中国海，雅致的波浪型楼体设计，把酒店自然融入宁静安逸的港湾，犹如珠海情侣路上香炉湾畔的璀璨明珠。同时，酒店紧靠商业娱乐购物中心，与拱北海关和九洲港码头近在咫尺，便利的水陆交通直抵珠海机场、香港、澳门以及珠江三角洲各大城市让珠海海湾大酒店成为商务旅行和休闲度假的首选之地。</p>
+						<p class="hotel_about">酒店特色</p>
+						<div class="hotel_feature">
+							<dl>
+								<dt><img src="../img/hotel03.png" alt=""></dt>
+								<dd>温馨客房</dd>
+							</dl>
+							<dl>
+								<dt><img src="../img/hotel01.png"></dt>
+								<dd>精致餐饮</dd>
+							</dl>
+							<dl>
+								<dt><img src="../img/hotel02.png"></dt>
+								<dd>康乐休闲</dd>
+							</dl>
+							<dl>
+								<dt><img src="../img/hotel04.png"></dt>
+								<dd>会议宴会</dd>
+							</dl>
+						</div>
+						<p class="hotel_about">地理位置</p>
+					</div>
+					<!-- location -->
+					<div class="hotel_location">
+						<div class="hotel_address">
+							<p>地址： 广东省珠海市拱北区拱北水湾路245号
+             临近拱北口岸与九洲港码头</p>
+							<p>邮编： 519020</p>
+							<p>传真：  86756-8878998</p>
+							<p>邮箱：  info@gbvh.com</p>
+							<p>微信：  GBVHZH</p>
+						</div>
+						<div id="silver_meeting_location_map"></div>
+					</div>
+				</div>
 			</div>
 			<!-- 右栏 -->
 			<div class="right_column">
@@ -38,7 +100,10 @@
 		</div>
 	</div>
 	
-
+	<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript" src="../js/load.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MW2tGUSaW3lhWkPwv0mC09MY3zh2mNEY"></script>
+	<script type="text/javascript" src="../js/base.js"></script>
+	<script type="text/javascript" src="../js/baidumap.js"></script>
 </body>
 </html>
