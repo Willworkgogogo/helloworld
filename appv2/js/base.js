@@ -1,28 +1,23 @@
 
 (function(){
-
-	/*footer轮播*/
-	var dom = {
-		speed : 50,
-		mapDom1 : $(".silver_meeting_footer_rollingImg1"),
-		mapDom2 : $(".silver_meeting_footer_rollingImg2")
+	/*index*/
+	var aLi = $(".index_innerwrapper li");
+	var num = 1;
+	function fade(){
+		num++;
+		if(num==2){num=0};
+		aLi.eq(num).css('display', 'none').siblings().fadeIn('slow');
 	}
-	var mapDomheight = dom.mapDom1.height();
-	dom.mapDom2.html(dom.mapDom1.html());
-	dom.mapDom2.css('top', mapDomheight);
-	console.log(mapDomheight)
-	function scrollImg() {
-		if(parseInt(dom.mapDom1.css("top"))<=-mapDomheight){
-			dom.mapDom1.css('top', mapDomheight+"px");
-		}else{
-			dom.mapDom1.css('top', parseInt(dom.mapDom1.css("top"))-1+"px");
-		}
+	setInterval(fade, 4000);
 
-		if(parseInt(dom.mapDom2.css("top"))<=-mapDomheight){
-			dom.mapDom2.css('top', mapDomheight+"px");
-		}else{
-			dom.mapDom2.css('top', parseInt(dom.mapDom2.css("top"))-1+"px");
-		}
+	// 左侧轮播
+	var silver_meeting_footer_rollingImg1 = $(".silver_meeting_footer_rollingImg1");
+	
+	function rollImg(){
+		silver_meeting_footer_rollingImg1.animate({marginTop:"-149px"},2000,"linear",function(){
+			silver_meeting_footer_rollingImg1.css({marginTop:"0px"});
+			$(".silver_meeting_footer_rollingImg1 div:first").remove().clone(true).appendTo(".silver_meeting_footer_rollingImg1");
+		});
 	}
-	var footerScroll = setInterval(scrollImg, 20)
+	setInterval(rollImg,2000);
 })()

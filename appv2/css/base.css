@@ -74,8 +74,11 @@ img{
 	padding: 0 38px;
 	font-size: 30px;
 	color: #fff;
-	font-family: SimHei;
 	cursor: pointer;
+}
+.header_nav .nav_active{
+	background: #d4d6ff;
+    color: #000;
 }
 .header_nav li:hover{
 	background: #d4d6ff;
@@ -110,6 +113,19 @@ img{
 	min-height: 985px;
 	float: left;
 	padding-left: 10px;
+}
+.index_imgcontainer,.index_innerwrapper{
+	width: 594px;
+	height: 356px;
+}
+.index_innerwrapper{
+	position: relative;
+}
+.index_innerwrapper li{
+	position: absolute;
+}
+.index_last{
+	display: none;
 }
 .download{
 	width: 305px;
