@@ -8,7 +8,7 @@
 		if(num==2){num=0};
 		aLi.eq(num).css('display', 'none').siblings().fadeIn('slow');
 	}
-	setInterval(fade, 4000);
+	setInterval(fade, 3000);
 
 	// 左侧轮播
 	var silver_meeting_footer_rollingImg1 = $(".silver_meeting_footer_rollingImg1");

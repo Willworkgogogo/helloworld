@@ -68,13 +68,13 @@ img{
 	clear: both;
 }
 .header_nav li{
-	float: left;
-	height: 70px;
-	line-height: 70px;
-	padding: 0 38px;
-	font-size: 30px;
-	color: #fff;
-	cursor: pointer;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 48px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
 }
 .header_nav .nav_active{
 	background: #d4d6ff;
@@ -188,7 +188,7 @@ img{
 }
 .speakerList{
 	width: 940px;
-	height: 657px;
+	height: 700px;
 	clear: both;
 	background: #fff;
 }
@@ -231,7 +231,7 @@ li.silver_meeting_firstli{
 	margin-left: 10px;
 }
 li.silver_meeting_bottomli{
-	height: 216px;
+	height: 228px;
 }
 .silver_meeting_guestimg img{
 	display: inline-block;
