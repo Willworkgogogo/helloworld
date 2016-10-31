@@ -1,0 +1,59 @@
+/*left*/
+.silver_meeting_footer_rollingImg{
+	float: right;
+    width: 180px;
+    height: 745px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+}
+.silver_meeting_footer_rollingImg img{
+	width: 180px;
+    height: 113px;
+}
+.silver_meeting_footer_rollingImg1{
+	height: 1500px;
+}
+.left_column>p{
+	height: 45px;
+	line-height: 45px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	background: #03255e;
+	font-family: SimHei;
+}
+.silver_meeting_footer_rollingImg p{
+	line-height: 36px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/*right*/
+.right_Companytheme{
+	height: 45px;
+	line-height: 45px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	background: #03255e;
+	font-family: SimHei;
+}
+.right_Companyname{
+	font-size: 12px;
+	line-height: 24px;
+	background: #fff;
+}
+/*footer*/
+.footer{
+	width: 1300px;
+	height: 110px;
+	line-height: 110px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	background: #03255e;
+	clear: both;
+	float: left;
+	z-index: 1;
+}

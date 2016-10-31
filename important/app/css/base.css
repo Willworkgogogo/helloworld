@@ -1,0 +1,553 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+	color: #000;
+	text-decoration: none;
+}
+img{
+	display: block;
+}
+/*silver meeting*/
+.wrap{
+	width: 1300px;
+	margin: 0 auto;
+}
+.header_bg img{
+	width: 1300px;
+	height: auto;
+}
+.header_nav{
+	padding-left: 10px;
+	width: 1290px;
+	background: #2f2d7a;
+}
+.header_nav:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.header_nav li{
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    color: #fff;
+}
+.header_nav .nav_active{
+	background: #d4d6ff;
+    color: #000;
+}
+.header_nav .nav_active_a{
+	color: #000;
+}
+.header_nav li a{
+	display: block;
+	padding: 0 48px;
+	color: #fff;
+}
+.header_nav li a:hover{
+	background: #d4d6ff;
+	color: #000;	
+}
+.content{
+	width: 100%;
+	height: auto;
+}
+.content:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+/*left column*/
+.left_column,.mid_column,.right_column{
+	float: left;
+}
+.left_column{
+	width: 180px;
+}
+.mid_column{
+	width: 940px;
+	padding-top: 50px;
+	background: #fff;
+}
+.right_column{
+	width: 180px;
+}
+.meeting_intro{
+	width: 595px;
+	min-height: 985px;
+	float: left;
+	padding-left: 10px;
+}
+.index_imgcontainer,.index_innerwrapper{
+	width: 594px;
+	height: 356px;
+}
+.index_innerwrapper{
+	position: relative;
+}
+.index_innerwrapper li{
+	position: absolute;
+}
+.index_last{
+	display: none;
+}
+.download{
+	width: 305px;
+	min-height: 985px;
+	float: right;
+	margin-right: 10px;
+}
+.meeting_intro_down p{
+	font-size: 32px;
+	font-family: SimHei;
+	padding: 20px 5px;
+}
+.meeting_intro_down div{
+	font-size: 18px;
+	line-height: 36px;
+    padding: 0 5px;
+}
+.download_url .download_url_title{
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	background: #03255e;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+	font-family: SimHei;
+}
+.download_url p{
+	line-height: 75px;
+    font-size: 24px;
+    font-family: SimHei;
+    background: url(../img/download_bgline.png) left bottom no-repeat;
+    text-align: center;
+    position: relative;
+}
+.download_url p i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 20px;
+    top: 30px;
+}
+.download_url p i img{
+	width: 20px;
+	height: 20px;
+}
+.download p a:hover{
+	color: blue;
+}
+.contactus{
+	margin-top: 50px;
+}
+.contactus_title{
+	width: 285px;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 10px;
+	background: #03255e;
+	color: #fff;
+	font-size: 20px;
+	font-family: SimHei;
+}
+.speakerList{
+	width: 940px;
+	height: 700px;
+	clear: both;
+	background: #fff;
+}
+.speakerList_title{
+	height: 70px;
+	width: 920px;
+	line-height: 70px;
+	font-size: 30px;
+	color: #fff;
+	background: #03255e;
+	padding: 0 10px;
+}
+.speakerList_title_left{
+	float: left;
+}
+.speakerList_title_right{
+	float: right;
+}
+
+.silver_meeting_guestIntroduce_wrap{
+	width: 970px;
+	height: 657px;
+	padding-top: 45px;
+	overflow: hidden;
+}
+.silver_meeting_guestIntroduce_wrap:after{
+	clear: both;
+	content: "";
+	display: block;
+}
+.silver_meeting_guestIntroduce_wrap li{
+	width: 220px;
+	height: 275px;
+	margin-left: 20px;
+	margin-bottom: 40px;
+	float: left;
+	overflow: hidden;
+}
+li.silver_meeting_firstli{
+	margin-left: 10px;
+}
+li.silver_meeting_bottomli{
+	height: 228px;
+}
+.silver_meeting_guestimg img{
+	display: inline-block;
+	width: 100px;
+	height: 106px;
+	margin-left: 60px;
+}
+.silver_meeting_guestName{
+	font-size: 20px;
+	font-family: SimHei;
+	text-align: center;
+	padding: 5px 0;
+}
+.silver_meeting_guestHonor p{
+	font-size: 12px;
+	line-height: 24px;
+	text-align: center;
+}
+
+/*organizor.html*/
+.organizorIntro{
+	padding: 0 70px;
+}
+.organizorIntro>h2{
+	font-size: 60px;
+	font-family: SimHei;
+	color: rgb(85,84,84);
+	text-align: center;
+}
+.organizorIntro>h3{
+	font-size: 30px;
+	padding: 20px 0;
+	font-family: SimHei;
+	text-align: center;
+}
+.organizorIntro>p{
+	font-size: 20px;
+	line-height: 40px;
+}
+.first_line,.second_line{
+	margin-bottom: 40px;
+}
+.organizorIntro .end_line{
+	font-size: 30px;
+	text-align: center;
+}
+.organizorEvent{
+	padding: 0 10px;
+}
+.organizorEvent_title{
+	font-size: 60px;
+	font-family: SimHei;
+	height: 90px;
+	line-height: 90px;
+	text-align: center;
+	color: #fff;
+	background: #03255e;
+	margin:70px 0;
+}
+.organizorEvent_img{
+	width: 920px;
+	height: 948px;
+}
+.planning{
+	padding: 0 10px;
+	width: 920px;
+	margin-top: -50px;
+}
+.planning img{
+	width: 920px;
+	height: auto;
+}
+
+/*registration*/
+.registration_content{
+	padding: 0 10px;
+	margin-top: -50px;
+}
+.registration_title{
+	font-size: 48px;
+	text-align: center;
+	margin: 40px 0 23px;
+	color: #27256b;
+}
+.meeting_cost,.meeting_way,.meeting_other{
+	height: 65px;
+	line-height: 65px;
+	font-size: 24px;
+	background: #201f5d;
+	padding-left: 20px;
+	color: #fff;
+}
+.meeting_way,.meeting_other{
+	margin-top: 20px;
+}
+.meeting_other{
+	margin-bottom: 30px;
+}
+.cost_detail img, .pay_detail img{
+	width: 920px;
+	height: auto;
+}
+.cost_detail{
+	height: 258px;
+	margin: 30px 0 60px;
+}
+.pay_detail{
+	height: 199px;
+	margin: 30px 0 70px;
+}
+.meet_description span,.meet_attention span{
+	font-size: 36px;
+	line-height: 72px;
+	color: #666;
+}
+.meet_description p,.meet_attention p{
+	font-size: 18px;
+    line-height: 32px;
+    color: #666;
+}
+.addr_attention>p{
+	font-size: 18px;
+	line-height: 32px;
+	color: #666;
+}
+.addr_attention_bottom{
+	margin-bottom: 50px;
+}
+.addr_attention_bottom span{
+	display: inline-block;
+	float: left;
+	width: 18px;
+	height: 56px;
+	background: url(../img/icon_bottom.png) no-repeat;
+}
+.addr_attention_bottom p{
+	font-size: 18px;
+	padding-top: 38px;
+	color: #201f5d;
+}
+
+/*hotel*/
+.hotelContent{
+	width: 920px;
+	padding: 0 10px;
+}
+.hotelContent_topImg:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.hotelContent_header img{
+	width: 920px;
+	height: auto;
+}
+.hotelContent_topImg img{
+	width: 450px;
+	margin-top: 30px;
+}
+.hotelContent_topleftImg{
+	float: left;
+}
+.hotelContent_toprightImg{
+	float: right;	
+}
+.hotel_about{
+	font-size: 30px;
+    line-height: 60px;
+    padding-left: 15px;
+    margin: 20px 0;
+    background: url(../img/hotel_borderline.png) left 46px no-repeat;
+}
+.hotel_description span{
+	font-size: 24px;
+	line-height: 48px;
+}
+.hotel_description{
+	font-size: 18px;
+	line-height: 36px;
+	margin-bottom: 30px;
+}
+.hotel_feature{
+	margin: 60px 0;
+}
+.hotel_feature:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.hotel_feature dl{
+	float: left;
+	width: 211px;
+	margin-left: 15px;
+}
+.hotel_feature dl dd{
+    text-align: center;
+    line-height: 59px;
+    font-size: 16px;
+}
+.hotel_feature img{
+	width: 211px;
+	height: 114px;
+}
+.hotel_location{
+	margin-bottom: 50px;
+}
+.hotel_location:after,.zhuahai_tip_innerwrap:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.hotel_address{
+	float: left;
+	width: 280px;
+	line-height: 32px;
+	font-size: 16px;
+	font-family: SimHei;
+}
+#silver_meeting_location_map{
+	float: right;
+	width: 620px;
+    height: 350px;
+    overflow: hidden;
+    border: 5px solid #333;
+}
+
+/*present*/
+.present{
+	width: 920px;
+	padding: 0 10px;
+}
+.present_description{
+	width: 800px;
+	margin: 90px auto;
+	font-size: 24px;
+	line-height: 48px;
+	font-family: SimHei;
+	position: relative;
+}
+.present_span1,.present_span2{
+	position: absolute;
+	width: 35px;
+	height: 32px;
+	display: block;
+}
+.present_span1{
+	left: -40px;
+	top: -13px;
+	background: url(../img/present02.png) no-repeat;
+}
+.present_span2{
+	left: 520px;
+	top: 116px;
+	background: url(../img/present01.png) no-repeat;
+}
+.present_title{
+	height: 100px;
+	font-size: 50px;
+	text-align: center;
+	line-height: 100px;
+	color: #fff;
+	background: #201f5d;
+	margin: 40px 0;
+}
+.present_img{
+	margin-top: 100px;
+	height: 298px;
+}
+.present_img img{
+	width: 920px;
+	height: auto;
+}
+/*zhuhai*/
+.zhuhai_traval{
+	width: 920px;
+	padding: 0 10px;
+}
+.zhuahai_tip,.zhuhai_feature{
+	line-height: 70px;
+	font-size: 40px;
+	text-align: center;
+	color: #fff;
+	font-family: SimHei;
+	background: #201f5d;
+	margin-bottom: 70px;
+}
+.zhuahai_tip_innerwrap{
+	margin-bottom: 50px;
+}
+.zhuahai_tipleft{
+	width: 480px;
+	font-size: 16px;
+	line-height: 32px;
+	float: left;
+	color: #666;
+}
+.zhuahai_tipright{
+	width: 418px;
+	float: right;
+}
+.zhuhai_feature_detail{
+	margin-bottom: 50px;
+}
+.zhuhai_feature_detail img{
+	width: 920px;
+	height: auto;
+}
+.download_url p a:hover{
+	color: blue;
+}
