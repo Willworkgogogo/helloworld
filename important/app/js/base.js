@@ -1,5 +1,6 @@
 
 (function(){
+	$(window).scrollTop(485);
 	/*index*/
 	var aLi = $(".index_innerwrapper li");
 	var num = 1;
