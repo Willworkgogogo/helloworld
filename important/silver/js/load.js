@@ -1,4 +1,4 @@
-$(window).scrollTop(485);
+$(window).scrollTop($);
 
 
 // $(".left_column").load("../html/common/left.html", function(){
