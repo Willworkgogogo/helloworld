@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>广告</title>
+	<style type="text/css">
+		.smm_index_bottom_pay_ad{
+			width: 100%;
+			height: 260px;
+			background: url(smm_index_bottom_pay_ad_bg.png) no-repeat;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			display: none;
+			z-index: 99999;
+		}
+		.smm_index_bottom_pay_ad_mid{
+			width: 929px;
+			height: 260px;
+			margin: 0 auto;
+			/*background: url(smm_index_bottom_pay_ad_mid.png) no-repeat;*/
+			/*position: relative;*/
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+		.smm_index_bottom_pay_ad_mid a{
+			display: block;
+			width: 941px;
+			height: 260px;
+		}
+		.smm_index_bottom_pay_ad_button{
+			display: block;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			right: 1px;
+    		top: 58px;
+    		cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="smm_index_bottom_pay_ad">
+		<!-- <div class="smm_index_bottom_pay_ad_mid">
+			<a href="https://pay.smm.cn/?index-bt" target="_blank"></a>
+			<span class="smm_index_bottom_pay_ad_button"></span>
+		</div> -->
+		<img src="smm_index_bottom_pay_ad_bg.png">
+
+		<div class="smm_index_bottom_pay_ad_mid">
+			<a href="https://pay.smm.cn/?index-bt" target="_blank">
+				<img src="smm_index_bottom_pay_ad_mid.png" alt="">
+			</a>
+			<span class="smm_index_bottom_pay_ad_button"></span>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		//定时器
+		
+		setTimeout(function(){
+			$(".smm_index_bottom_pay_ad").fadeIn();
+		}, 2000);
+
+		$(".smm_index_bottom_pay_ad_button").on('click', function() {
+			$(".smm_index_bottom_pay_ad").hide();
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
