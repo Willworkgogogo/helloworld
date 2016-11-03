@@ -1,0 +1,4 @@
+E:\Example\HighchartsExample\HighchartsExample\bin\HighchartsExample.dll
+E:\Example\HighchartsExample\HighchartsExample\bin\HighchartsExample.pdb
+E:\Example\HighchartsExample\HighchartsExample\obj\Debug\HighchartsExample.dll
+E:\Example\HighchartsExample\HighchartsExample\obj\Debug\HighchartsExample.pdb

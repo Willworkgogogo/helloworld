@@ -1,0 +1,127 @@
+$(function () {
+    Highcharts.setOptions({
+        lang:{
+            drillUpText:"返回 > {series.name}"
+        }
+    });
+    var data = Highcharts.geojson(Highcharts.maps['countries/cn/custom/cn-all-china']),small = $('#container').width() < 400;
+    // 给城市设置随机数据
+    $.each(data, function (i) {
+        this.drilldown = this.properties['drill-key'];
+        this.value = i;
+    });
+    //初始化地图
+    $('#container').highcharts('Map', {
+        chart : {
+            events: {
+                drilldown: function (e) {
+                    if (!e.seriesOptions) {
+                        var chart = this;                             
+                        var cname=e.point.properties["cn-name"];
+                        chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>');
+                        // 加载城市数据
+                        $.ajax({
+                            type: "GET",
+                            url: "http://data.hcharts.cn/jsonp.php?filename=GeoMap/json/"+ e.point.drilldown+".geo.json",
+                            contentType: "application/json; charset=utf-8",
+                            dataType:'jsonp',
+                            crossDomain: true,
+                            success: function(json) {
+                                data = Highcharts.geojson(json);
+                                $.each(data, function (i) {
+                                    this.value = i;
+                                });
+                                chart.hideLoading();
+
+                                chart.addSeriesAsDrilldown(e.point, {
+                                    name: e.point.name,
+                                    data: data,
+                                    dataLabels: {
+                                        enabled: true,
+                                        format: '{point.name}'
+                                    }
+                                });
+                            },
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                            }
+                        });
+                    }
+
+
+                    this.setTitle(null, { text: cname });
+                },
+                drillup: function () {
+                    this.setTitle(null, { text: '中国' });
+                }
+            }
+        },
+        credits:{
+            href:"http://www.peng8.net/",
+            text:"www.peng8.net"
+        },
+        title : {
+            text : 'highmap中国地图By peng8'
+        },
+        subtitle: {
+            text: '中国',
+            floating: true,
+            align: 'right',
+            y: 50,
+            style: {
+                fontSize: '16px'
+            }
+        },
+        legend: small ? {} : {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+        //tooltip:{
+        //pointFormat:"{point.properties.cn-name}:{point.value}"
+        //},
+        colorAxis: {
+            min: 0,
+            minColor: '#E6E7E8',
+            maxColor: '#005645'
+        },
+        mapNavigation: {
+            enabled: true,
+            buttonOptions: {
+                verticalAlign: 'bottom'
+            }
+        },
+        plotOptions: {
+            map: {
+                states: {
+                    hover: {
+                        color: '#EEDD66'
+                    }
+                }
+            }
+        },
+        series : [{
+            data : data,
+            name: '中国',
+            dataLabels: {
+                enabled: true,
+                format: '{point.properties.cn-name}'
+            }
+        }],
+        drilldown: {
+
+            activeDataLabelStyle: {
+                color: '#FFFFFF',
+                textDecoration: 'none',
+                textShadow: '0 0 3px #000000'
+            },
+            drillUpButton: {
+                relativeTo: 'spacingBox',
+                position: {
+                    x: 0,
+                    y: 60
+                }
+            }
+        }
+    });
+});

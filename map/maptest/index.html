@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="main" style="width: 1800px; height: 1000px;"></div>
+	<script type="text/javascript" src="echarts.js"></script>
+	<script type="text/javascript" src="china.js"></script>
+	<script type="text/javascript">
+		var chart = echarts.init(document.getElementById('main'));
+		chart.setOption({
+		    series: [{
+		        type: 'map',
+		        map: 'china'
+		    }]
+		});
+		$.get('china.json', function (chinaJson) {
+		    echarts.registerMap('china', chinaJson);
+		    var chart = echarts.init(document.getElementById('main'));
+		    chart.setOption({
+		        series: [{
+		            type: 'map',
+		            map: 'china'
+		        }]
+		    });
+		});
+	</script>
+</body>
+</html>
