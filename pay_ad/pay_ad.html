@@ -51,20 +51,18 @@
 	<script type="text/javascript" src="jquery.cookie.js"></script>
 	<script type="text/javascript">
 		//定时器
-		var smm_index_bottom_pay_ad = $(".smm_index_bottom_pay_ad")
+		var smm_index_bottom_pay_ad = $(".smm_index_bottom_pay_ad");
+
 		if($.cookie('pay_ad') == 'start'){
 			clearTimeout(smm_index_bottom_pay_ad.time);
 		}else {
 			smm_index_bottom_pay_ad.time = setTimeout(function(){
 				smm_index_bottom_pay_ad.slideDown();
 			}, 2000);
-		}
-		
-
+		};
 		$(".smm_index_bottom_pay_ad_button").on('click', function() {
 			smm_index_bottom_pay_ad.slideUp();
 			var nowDate = new Date();
-			// console.log(nowDate)
 			var tonight = new Date(nowDate.getFullYear(), nowDate.getMonth(),  nowDate.getDate(), 23, 59, 59);
 			$.cookie("pay_ad", "start", { expires: tonight, path: '/' });
 		});
