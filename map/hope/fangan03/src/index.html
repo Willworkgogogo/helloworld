@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="main" style="height: 500px;"></div>
+	<script type="text/javascript" src="echarts/build/dist/echarts.js"></script>
+	<script type="text/javascript">
+		require.config({
+			paths: {
+				echarts: './echarts/build/dist'
+			}
+		})
+
+		require(['echarts', 'echarts/chart/bar'], function(echarts){
+			var myChart = echarts.init(document.getElementById('main'));
+			var option = {
+				tooltip:{
+					show: true
+				},
+				legend:{
+					data:['销量']
+				},
+				xAxis:[
+					{
+						type: 'category',
+						data:['衣服1','衣服2','衣服3','衣服4','衣服5']
+					}
+				],
+				yAxis:[
+					{
+						type:'value'
+					}
+				],
+				series:[
+					{
+						'name':'销量',
+						'type':'bar',
+						'data':[5, 10, 15, 20, 40]
+					}
+				]
+			}
+			myChart.setOption(option);
+		});//require()
+	</script>
+</body>
+</html>
