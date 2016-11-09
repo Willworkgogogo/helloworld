@@ -20,7 +20,7 @@
 		// myChart.showLoading({
 		//     text: '正在努力的读取数据中...',    //loading话术
 		// });
-		option = {
+		var option = {
 		    title : {
 		        text: 'iphone销量',
 		        subtext: '纯属虚构',
@@ -54,6 +54,7 @@
 		            saveAsImage : {show: true}
 		        }
 		    },
+		    selectedMode: 'single',
 		    roamController: {
 		        show: true,
 		        x: 'right',
@@ -159,6 +160,9 @@
 		    ]
 		};
 		myChart.setOption(option);
+		myChart.on('click', function(params){
+			console.log(params);
+		})
 	</script>
 </body>
 </html>
