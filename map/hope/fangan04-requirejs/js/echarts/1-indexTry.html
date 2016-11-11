@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>echarts</title>
+</head>
+<body>
+	<div id="main" style="height: 500px; width: 1000px; margin: 0 auto;"></div>
+	<script type="text/javascript" src="build/dist/echarts.js"></script>
+	<script type="text/javascript" src="build/dist/chart/map.js"></script>
+	<script type="text/javascript">
+		require.config({
+			paths: {
+				echarts: 'build/dist'
+			}
+		})
+
+		require(
+			[
+				'echarts',
+				'echarts/chart/map',
+				'echarts/china'
+			],function(ec){
+				// require(['echarts/china'], function(){
+				// 	var myChart = ec.init(document.getElementById('main'));
+
+				// })
+				var myChart = ec.init(document.getElementById('main'));
+
+			}
+		)
+	</script>
+</body>
+</html>
