@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="上海有色金属网,长江有色金属网,价格走势,有色新闻,行情分析,热点新闻,有色周报,金属日评,期货交易,现货投资," />
+    <meta name="description" content="上海有色网(原上海有色金属网),提供有色金属期/现货交易信息.有色金属现货价格的风向标,品种涵盖铜,铝,铅,锌,锡,镍,小金属,稀贵,黄金白银等,是有色金属行业的门户网站,点击率居世界有色网站之前列."
+    />
+	<title>有色地图</title>
+	<link rel="shortcut icon" type="image/x-icon" href="http://www.smm.cn/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="static/css/base.css">
+</head>
+<body>
+	<div class="header_top"></div>
+	<!-- headernav -->
+	<header>
+		<div class="map_header layout bg-white">
+			<div class="smm_logo">
+				<a href="##">
+					<img src="static/img/smm_map_logo.png">
+				</a></div>
+			<div class="map_title">
+				<span>新能源</span>
+			</div>
+		</div>		
+	</header>
+	<!-- 二级菜单、地图 -->
+	<div class="nav_map_wrap layout">
+		<div class="map_subnav">
+			<ul class="map_subnav_title">
+				<li>矿和盐<i></i>
+					<ul class="map_subnav_title_subnav">
+						<li>锂矿</li>
+						<li>镍矿</li>
+						<li>硫酸镍</li>
+					</ul>
+				</li>
+				<li>电池材料<i></i>
+					<ul class="map_subnav_title_subnav">
+						<li>锂矿</li>
+						<li>镍矿</li>
+						<li>硫酸镍</li>
+					</ul>
+				</li>
+				<li>电池</li>
+				<li>终端<i></i>
+					<ul class="map_subnav_title_subnav">
+						<li>锂矿</li>
+						<li>镍矿</li>
+						<li>硫酸镍</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="map_subnav_tips">
+				<li>三元材料</li>
+				<li>磷酸铁锂</li>
+				<li>硅碳负极</li>
+				<li>六氟磷酸锂</li>
+				<li>干法隔膜</li>
+				<li>湿法隔膜</li>
+				<li>乘用车</li>
+				<li>客车</li>
+			</ul>
+		</div><!-- /.map_subnav -->
+		<div class="map_echarts">
+			<div id="smm_map_echarts"></div>
+		</div><!-- /.map_echarts -->
+	</div><!-- /.wrap -->
+
+	<!-- 路径导航显示 -->
+	<div class="smm_map_location layout">
+		<span>矿和盐</span>
+		>
+		<span>锂矿</span>
+		>
+		<span>福建</span>
+	</div><!-- /.location -->
+
+	<!-- 对比列表 -->
+	<div class="smm_map_listItem layout">
+		<span class="listItem_info listItem_selected">企业信息</span>
+		<span class="listItem_compare">企业对比</span>
+	</div>
+	<!-- 列表详情标题 -->
+	<ul class="smm_map_listTitle layout">
+		<li class="list_fisrt">对比</li>
+		<li class="list_second">企业名称</li>
+		<li class="list_third">企业地址</li>
+		<li class="list_fourth">股票代码</li>
+		<li class="list_fifth">矿山信息</li>
+		<li class="list_sixth">2015年产量</li>
+		<li class="list_seventh">2015年锂盐产能</li>
+		<li class="list_eighth">2016年扩建计划</li>
+		<li class="list_ninth">2017年扩建计划</li>
+	</ul>
+	<!-- 列表详情 -->
+	<div class="listWrap_content layout">
+		<!-- 信息页 -->
+		<div class="listInfo_wrap">
+			<div class="smm_map_content_innerWrap">
+				<ul class="smm_map_content_listUl">
+					<li class="list_first">
+						<input type="checkbox" name="">
+					</li>
+					<li class="list_second">工厂1号</li>
+					<li class="list_third">企业地址</li>
+					<li class="list_fourth">股票代码</li>
+					<li class="list_fifth">矿山信息</li>
+					<li class="list_sixth">2015年产量</li>
+					<li class="list_seventh">2015年锂盐产能</li>
+					<li class="list_eighth">2016年扩建计划</li>
+					<li class="list_ninth">2017年扩建计划</li>
+				</ul>
+				<ul class="smm_map_content_listUl">
+					<li class="list_first">
+						<input type="checkbox" name="">
+					</li>
+					<li class="list_second">工厂2号</li>
+					<li class="list_third">企业地址</li>
+					<li class="list_fourth">股票代码</li>
+					<li class="list_fifth">矿山信息</li>
+					<li class="list_sixth">2015年产量</li>
+					<li class="list_seventh">2015年锂盐产能</li>
+					<li class="list_eighth">2016年扩建计划</li>
+					<li class="list_ninth">2017年扩建计划</li>
+				</ul>
+				<ul class="smm_map_content_listUl">
+					<li class="list_first">
+						<input type="checkbox" name="">
+					</li>
+					<li class="list_second">工厂3号</li>
+					<li class="list_third">企业地址</li>
+					<li class="list_fourth">股票代码</li>
+					<li class="list_fifth">矿山信息</li>
+					<li class="list_sixth">2015年产量</li>
+					<li class="list_seventh">2015年锂盐产能</li>
+					<li class="list_eighth">2016年扩建计划</li>
+					<li class="list_ninth">2017年扩建计划</li>
+				</ul>					
+			</div><!-- /.smm_map_content_innerWrap -->
+			<!-- 分页 -->
+			<div class="smm_map_pagination">
+				
+			</div>			
+		</div><!-- /.listInfo_wrap -->
+		<!-- 对比页 -->
+		<div class="listCompare_wrap"></div>		
+	</div>
+	
+	<!-- 右侧对比栏 -->
+	<div class="smm_map_rightCompare">
+		<p class="smm_map_rightCompare_title">对比栏</p>
+		<div class="smm_map_rightCompare_innerWrap">
+			<div class="rightCompare_listItems">
+				<!-- <div class="rightCompare_listItems_content">浙江新科能源减排有限公司</div>
+				<div class="rightCompare_btnDelete">
+					<button>删除</button>
+				</div> -->
+				<img src="static/img/compare1.png">
+			</div>
+			<div class="rightCompare_listItems">
+				<!-- <div class="rightCompare_listItems_content">浙江新科能源减排有限公司</div>
+				<div class="rightCompare_btnDelete">
+					<button>删除</button>
+				</div> -->
+				<img src="static/img/compare2.png">
+			</div>
+			<div class="rightCompare_listItems">
+				<!-- <div class="rightCompare_listItems_content">浙江新科能源减排有限公司</div>
+				<div class="rightCompare_btnDelete">
+					<button>删除</button>
+				</div> -->
+				<img src="static/img/compare3.png">
+			</div>
+			<div class="rightCompare_listItems">
+				<!-- <div class="rightCompare_listItems_content">浙江新科能源减排有限公司</div>
+				<div class="rightCompare_btnDelete">
+					<button>删除</button>
+				</div> -->
+				<img src="static/img/compare4.png">
+			</div>
+			<div class="rightCompare_listItems">
+				<!-- <div class="rightCompare_listItems_content">浙江新科能源减排有限公司</div>
+				<div class="rightCompare_btnDelete">
+					<button>删除</button>
+				</div> -->
+				<img src="static/img/compare5.png">
+			</div>
+			<div class="rightCompare_bottomBtn">
+				<button class="rightCompare_btnCompare">对比</button>
+				<button class="rightCompare_clearAll">清空对比栏</button>
+			</div>
+		</div>
+		<button class="rightCompare_toggle">隐藏</button>
+	</div>
+	<!-- button -->
+
+	
+	<script type="text/javascript" src="static/js/
+	jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="static/js/echarts-all.js"></script>
+	<script type="text/javascript" src="static/js/main.js"></script>
+</body>
+</html>
