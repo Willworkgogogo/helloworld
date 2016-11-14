@@ -7,7 +7,8 @@
 		$listItem_compare : $('.listItem_compare'),
 		$listInfo_wrap : $('.listInfo_wrap'),
 		$listCompare_wrap : $('.listCompare_wrap'),
-		$smm_map_rightCompare : $('.smm_map_rightCompare')
+		$smm_map_rightCompare : $('.smm_map_rightCompare'),
+		$smm_map_listTitle_listFirst:$('.smm_map_listTitle .list_first')
 	}
 	map.$map_subnav_title_li.on({
 		'mouseover': function(){
@@ -119,12 +120,14 @@
 
 	/*列表*/
 	map.$listItem_info.on('click', function(){
+		map.$smm_map_listTitle_listFirst.css('display', 'block');
 		map.$listInfo_wrap.css('display', 'block');
 		map.$listCompare_wrap.css('display', 'none');
 		$(this).addClass('listItem_selected');
 		map.$listItem_compare.removeClass('listItem_selected');
 	})
 	map.$listItem_compare.on('click', function(){
+		map.$smm_map_listTitle_listFirst.css('display', 'none');
 		map.$listInfo_wrap.css('display', 'none');
 		map.$listCompare_wrap.css('display', 'block');
 		$(this).addClass('listItem_selected');
@@ -139,46 +142,134 @@
 	})
 
 /*全局数组，存放企业名称*/
-var map_company = [];
-var map_compareImg = [
-		'static/img/compare1.png',
-		'static/img/compare2.png',
-		'static/img/compare3.png',
-		'static/img/compare4.png',
-		'static/img/compare5.png'
-	]
+	var map_company = [];
+	var map_compareImg = [
+			'static/img/compare1.png',
+			'static/img/compare2.png',
+			'static/img/compare3.png',
+			'static/img/compare4.png',
+			'static/img/compare5.png'
+		];
+
+
+/*对比栏删除按钮功能实现*/
+	$('.smm_map_rightCompare_innerWrap').on('click', function(event){
+
+		//删除按钮
+		if ($(event.target).text() == '删除') {
+			for (var i = 0; i < map_company.length; i++) {
+				if(map_company[i].name == $(event.target).parent().siblings('.rightCompare_listItems_content').text()){
+					
+					//对应复选框改为未勾选
+
+					$('.smm_map_content_listUl').each(function() {
+						if($(this).attr('hello') == map_company[i].id){
+							$(this).find('.list_first input').removeAttr('checked');
+						}
+					});
+					
+					//从数组中删除该元素；
+					map_company.splice(i, 1);
+				}
+			}
+		refreshCompare();
+		refreshComparePage();
+		}
+
+		//对比
+		if ($(event.target).text() == '对比') {
+			//样式重置
+			map.$smm_map_listTitle_listFirst.css('display', 'none');
+			map.$listInfo_wrap.css('display', 'none');
+			map.$listCompare_wrap.css('display', 'block');
+			map.$listItem_compare.addClass('listItem_selected');
+			map.$listItem_info.removeClass('listItem_selected');
+			refreshComparePage();
+		}
+
+		//清空对比栏
+		if ($(event.target).text() == '清空对比栏') {
+			map_company = [];
+			refreshCompare();
+			checkboxReset();
+		}
+	})
+
 /*列表勾选*/
 	$('.smm_map_content_listUl').on('click', function(event){
 		// console.log(event.target)
+		$('.smm_map_content_innerWrap .list_first input')
+		
 		if($(event.target).is(':checked')){
-			// console.log($(event.target).parent().next().html())
-			// console.log($(event.target).parent().parent());
 			var map01 = {};
-			// $(event.target).attr('arrayAdd', 'true');//打个标签，代表该ul已被选中
-			map01.name = $(event.target).parent().next().html();//企业名称
-			map01.ul = $(event.target).parent().parent();//ul
+			var html = '';
+			map01.id = $(event.target).parent().parent().attr('hello');//获取企业唯一id
+			map01.name = $(event.target).parent().next().text();//企业名称
+			html = $(event.target).parent().parent().prop('outerHTML');
+			map01.ul = html;//ul
+			// console.log($(event.target).parent().parent().html())
 			var arrayNum = map_company.push(map01);
-			$(event.target).attr('arrayNum', arrayNum-1);
-			// console.log(num);
+			// $(event.target).attr('arrayNum', arrayNum-1);
+			// console.log(map01.id);
 			// console.log(map_company)
 		}else{
-			map_company.splice($(event.target).attr('arrayNum'), 1);//从数组中删除元素
-			// console.log($(event.target).attr('arrayNum'))
+			for (var i = 0; i < map_company.length; i++) {
+				if(map_company[i].id == $(event.target).parent().parent().attr('hello')){
+					map_company.splice(i, 1);
+				}
+			}
 		}
-		console.log(map_company)
+		// console.log(map_company)
 		refreshCompare();
 	})
+
 
 	// refreshCompare()刷新对比栏
 	function refreshCompare(){
 		if (map_company != []) {
 			for (var i = 0; i < map_company.length; i++) {
-				$('.smm_map_rightCompare_innerWrap').find('.rightCompare_listItems').eq(i).html('<div class="rightCompare_listItems_content">'+ map_company[i].name +'</div>'
-										+'<div class="rightCompare_btnDelete"><button>删除</button></div>');
+				$('.smm_map_rightCompare_innerWrap')
+					.find('.rightCompare_listItems')
+					.eq(i)
+					.html('<div class="rightCompare_listItems_content">'+ map_company[i].name +'</div>'
+						+'<div class="rightCompare_btnDelete"><button>删除</button></div>');
 			};		
 		}
 		for (var i = map_company.length; i < 5; i++) {
-			$('.smm_map_rightCompare_innerWrap').find('.rightCompare_listItems').eq(i).html('<img src="'+ map_compareImg[i] +'">');			
+			$('.smm_map_rightCompare_innerWrap')
+				.find('.rightCompare_listItems')
+				.eq(i)
+				.html('<img src="'+ map_compareImg[i] +'">');			
 		}	
+	}
+
+	//checkboxReset复选框重置
+	function checkboxReset() {
+		if (map_company.length == 0) {
+			$('.smm_map_content_listUl').each(function() {
+				$(this).find('.list_first input').removeAttr('checked');
+			});
+		} else {
+			for (var i = 0; i < map_company.length; i++) {
+				$('.smm_map_content_listUl').each(function() {
+					if($(this).attr('hello') == map_company[i].id){
+						$(this).find('.list_first input').attr('checked');
+					}else{
+						$(this).find('.list_first input').removeAttr('checked');
+					}
+				});
+			}
+		}	
+	}
+
+	//refreshComparePage 对比页刷新
+	function refreshComparePage() {
+		//添加对比内容到对比页
+		var html = '';
+		for (var i = 0; i < map_company.length; i++) {
+			html += map_company[i].ul
+		};
+		$('.listCompare_wrap').html(html);
+		$('.listCompare_wrap .list_first').remove();
 	}
 })()

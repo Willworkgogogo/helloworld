@@ -188,7 +188,7 @@ table {
 	font-size: 14px;
 	text-align: center;	
 }
-.smm_map_listTitle .list_first{ width: 34px; }
+.smm_map_listTitle .list_first{ width: 32px; }
 .smm_map_listTitle .list_second{ width: 58px; }
 .smm_map_listTitle .list_third{ width: 120px; }
 .smm_map_listTitle .list_fourth{ width: 64px; }
@@ -213,7 +213,7 @@ table {
 	background: pink;
 }
 .listCompare_wrap{
-	background: blue;
+	background: lightblue;
 	display: none;	
 }
 .smm_map_content_innerWrap{
