@@ -8,7 +8,8 @@
 		$listInfo_wrap : $('.listInfo_wrap'),
 		$listCompare_wrap : $('.listCompare_wrap'),
 		$smm_map_rightCompare : $('.smm_map_rightCompare'),
-		$smm_map_listTitle_listFirst:$('.smm_map_listTitle .list_first')
+		$smm_map_listTitle_listFirst:$('.smm_map_listTitle .list_first'),
+		$contentInput : $('.smm_map_content_innerWrap .list_first input')
 	}
 	map.$map_subnav_title_li.on({
 		'mouseover': function(){
@@ -198,9 +199,16 @@
 /*列表勾选*/
 	$('.smm_map_content_listUl').on('click', function(event){
 		// console.log(event.target)
-		$('.smm_map_content_innerWrap .list_first input')
-		
+		// $('.smm_map_content_innerWrap .list_first input :ckecked').length
+		// console.log($('.smm_map_content_innerWrap .list_first input'))
+		var checkedAll = 0;
+		checkboxCheck(checkedAll);
+
 		if($(event.target).is(':checked')){
+
+			//点击时候检查复选框
+			checkboxCheck(checkedAll);
+
 			var map01 = {};
 			var html = '';
 			map01.id = $(event.target).parent().parent().attr('hello');//获取企业唯一id
@@ -209,10 +217,10 @@
 			map01.ul = html;//ul
 			// console.log($(event.target).parent().parent().html())
 			var arrayNum = map_company.push(map01);
-			// $(event.target).attr('arrayNum', arrayNum-1);
-			// console.log(map01.id);
-			// console.log(map_company)
 		}else{
+
+			checkboxCheck(checkedAll);
+			
 			for (var i = 0; i < map_company.length; i++) {
 				if(map_company[i].id == $(event.target).parent().parent().attr('hello')){
 					map_company.splice(i, 1);
@@ -271,5 +279,29 @@
 		};
 		$('.listCompare_wrap').html(html);
 		$('.listCompare_wrap .list_first').remove();
+	}
+
+	//checkboxCheck() 检查复选框，控制在5个可选
+	function checkboxCheck(checkedAll) {
+		for (var i = 0; i < map.$contentInput.length; i++) {
+			if(map.$contentInput[i].checked){
+				checkedAll++
+			}
+		}
+		if (checkedAll > 5) {
+			for (var i = 0; i < map.$contentInput.length; i++) {
+				if(!map.$contentInput[i].checked){
+					// console.log(map.$contentInput[i])
+					map.$contentInput[i].attr('disabled');
+				}
+			}
+		} else {
+			for (var i = 0; i < map.$contentInput.length; i++) {
+				// console.log(map.$contentInput[i])
+				if(map.$contentInput[i].disabled){
+					map.$contentInput[i].removeAttr('disabled');
+				}
+			}
+		}
 	}
 })()
