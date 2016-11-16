@@ -201,13 +201,12 @@ table {
 .smm_map_listTitle .list_fourth{ width: 120px; }
 .smm_map_listTitle .list_fifth{ width: 70px; }
 .smm_map_listTitle .list_sixth{ width: 70px; }
-.smm_map_listTitle .list_seventh{ width: 70px; }
-.smm_map_listTitle .list_eighth{ width: 93px; }
+.smm_map_listTitle .list_seventh{ width: 70px; position: relative;}
+.smm_map_listTitle .list_eighth{ width: 93px; position: relative;}
 .smm_map_listTitle .list_ninth{ width: 92px; }
 .smm_map_listTitle .list_ten{ width: 90px; }
 .smm_map_listTitle .list_eleven{ width: 139px; border: none;}
 .listWrap_content{
-	border: 1px solid #e1e1e1;
 	height: 540px;
 	position: relative;
 }
@@ -215,27 +214,57 @@ table {
     width: 55px;
     margin-top: 5px;
 }
+.listInfo_sortBtnBox1,
+.listInfo_sortBtnBox2, 
+.listCompare_sortBtnBox1,
+.listCompare_sortBtnBox2{
+	display: inline-block;
+	width: 8px;
+	height: 13px;
+	position: absolute;
+	top: 22px;
+    line-height: 0px;
+}
+.listInfo_sortBtnBox1, .listCompare_sortBtnBox1{ left: 60px; }
+.listInfo_sortBtnBox2, .listCompare_sortBtnBox2{ left: 84px; }
+.listInfo_sortBtnBox1 .btnTop, 
+.listInfo_sortBtnBox2 .btnTop,
+.listCompare_sortBtnBox1 .btnTop,
+.listCompare_sortBtnBox2 .btnTop{
+	display: inline-block;
+	width: 8px;
+	height: 7px;
+	background: url(../img/sortbtn.png) no-repeat;
+}
+.listInfo_sortBtnBox1 .btnDown, 
+.listInfo_sortBtnBox2 .btnDown,
+.listCompare_sortBtnBox1 .btnDown,
+.listCompare_sortBtnBox2 .btnDown{
+	display: inline-block;
+	width: 8px;
+	height: 6px;
+	background: url(../img/sortbtn.png) left -9px no-repeat;
+}
+
 .smm_map_listTitle .list_eighth div{
 	width: 75px;
     margin-top: 5px;
 }
 .smm_map_listTitle .list_ninth div{
 	width: 75px;
-    margin-top: 5px;
+    margin: 5px auto 0;
 }
 .smm_map_listTitle .list_ten div{
 	width: 75px;
-    margin-top: 5px;
+    margin: 5px auto 0;
 }
 .smm_map_listTitle div p{
 	line-height: 17px;
 }
 .listInfo_wrap, .listCompare_wrap{
 	width: 998px;
-	position: absolute;	
-}
-.listInfo_wrap{
-	background: pink;
+	position: absolute;
+	border: 1px solid #e1e1e1;	
 }
 .listCompare_wrap{
 	background: lightblue;
@@ -257,49 +286,108 @@ table {
 	text-align: center;	
 	border-right: 1px solid #e1e1e1;
 }
-.smm_map_content_listUl .list_first{ width: 28px; overflow: hidden; line-height: 70px;}
+.smm_map_content_listUl .list_first{ width: 28px; color: #4699f7; line-height: 70px;}
 .smm_map_content_listUl .list_second{ width: 66px; }
 .smm_map_content_listUl .list_third{ width: 84px; position: relative;}
 .smm_map_content_listUl .list_fourth{ width: 120px; }
 .smm_map_content_listUl .list_fifth{ width: 70px; }
 .smm_map_content_listUl .list_sixth{ width: 70px; }
-.smm_map_content_listUl .list_seventh{ width: 70px; }
-.smm_map_content_listUl .list_eighth{ width: 93px; }
-.smm_map_content_listUl .list_ninth{ width: 92px; }
+.smm_map_content_listUl .list_seventh{ width: 70px; line-height: 70px;}
+.smm_map_content_listUl .list_eighth{ width: 93px; line-height: 70px;}
+.smm_map_content_listUl .list_ninth{ width: 92px; line-height: 70px;}
 .smm_map_content_listUl .list_ten{ width: 90px; }
 .smm_map_content_listUl .list_eleven{ width: 139px; border: none; }
 
+.smm_map_content_listUl .list_first input{
+	width: 16px;
+	height: 16px;
+}
 .smm_map_content_listUl .list_second div{
 	margin-top: 18px;
 }
-.smm_map_content_listUl .list_third div{
-	margin-top: 10px;
+.smm_map_content_listUl .list_third,
+.smm_map_content_listUl .list_fourth,
+.smm_map_content_listUl .list_fifth,
+.smm_map_content_listUl .list_sixth,
+.smm_map_content_listUl .list_ten,
+.smm_map_content_listUl .list_eleven{
+	height: 70px;
+	display: table; 
+	*position: relative;  
+	overflow: hidden; 
+}
+.listItems_subwrap{
+	vertical-align: middle;  
+	display: table-cell;  
+	*position: absolute;  
+	*top: 50%; 
 	overflow: hidden;
+}
+.listItems_subwrap div{
+	*position: relative;  
+	*top: -50%;
+	word-wrap:break-word;
+	overflow: hidden;
+	max-height: 68px;
 }
 .smm_map_pagination{
 	height: 60px;
-	background: #666;
+	background: #fff;
+}
+.rightCompare_wrap{
+	width: 174px;
+	height: 610px;
+	position: absolute;
+	right: 5px;
+	display: none;
+}
+.rightCompare_outerWrap{
+	width: 162px;
+	height: 640px;
+	overflow: hidden;
+	position: relative;
+}
+.rightButtonToggle{
+	width: 12px;
+	height: 41px;
+	background: url(../img/button_arrow.png) no-repeat;
+	position: absolute;
+	right: 0;
+	top: 285px;
 }
 .smm_map_rightCompare{
 	width: 160px;
 	height: 610px;
 	position: absolute;
-	right: 5px;
-	top: 50px;
-	display: none;
-	background: #fff;
+	top: 0;
+	left: 162px;
 }
 .smm_map_rightCompare_title{
-	line-height: 35px;
-	color: #4699f7;
-	text-align: center;
-	font-size: 16px;
+    line-height: 48px;
+    width: 160px;
+    color: #4699f7;
+    background: #fff;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #4699f7;
+    border-bottom: 1px dashed #4699f7;
+    position: relative;
+}
+.rightCompare_hide{
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 12px;
+	color: #7b899a;
+	cursor: pointer;
 }
 .smm_map_rightCompare_innerWrap{
 	height: 559px;
 	width: 144px;
 	border: 1px solid #4699f7;
-	padding: 8px;	
+	border-top: none;
+	padding: 8px;
+	background: #fff;	
 }
 .rightCompare_toggle{
 	width: 45px;
@@ -319,6 +407,7 @@ table {
 .rightCompare_listItems_content{
 	height: 48px;
 	text-align: center;
+	font-size: 14px;
 	overflow: hidden;
 }
 .rightCompare_btnDelete{
@@ -356,3 +445,8 @@ table {
 .rightCompare_bottomBtn .rightCompare_clearAll{
 	color: #4699f7;
 }
+.paginationWrap{padding: 20px 20px;text-align: left;color: #ccc; margin-left: 249px;}
+.paginationWrap a{display: inline-block;color: #4699f7;display: inline-block;height: 25px;	line-height: 25px;	padding: 0 10px;border: 1px solid #ddd;	margin: 0 2px;border-radius: 4px;vertical-align: middle; text-decoration: none;}
+.paginationWrap a:hover{text-decoration: none;border: 1px solid #428bca;}
+.paginationWrap span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #4699f7;	border: 1px solid #428bca;border-radius: 4px;vertical-align: middle;}
+.paginationWrap span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}

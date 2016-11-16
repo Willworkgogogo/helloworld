@@ -35,11 +35,6 @@
 			    tooltip : {
 			        trigger: 'item'
 			    },
-			    // legend: {
-			    //     orient: 'vertical',
-			    //     x:'left',
-			    //     data:['iphone3','iphone4','iphone5']
-			    // },
 			    dataRange: {
 			        min: 0,
 			        max: 1000,
@@ -136,13 +131,32 @@
 			map.$listItem_info.removeClass('listItem_selected');
 		})
 
+		//隔行变色
+		$('.smm_map_content_innerWrap .smm_map_content_listUl:even').css('background', '#fff');
+		$('.smm_map_content_innerWrap .smm_map_content_listUl:odd').css('background', '#fafafa');
 	/*右侧对比栏列表*/
 		//初始定位高度
-		map.$smm_map_rightCompare.css({'top': $('.smm_map_listItem').offset().top+'px','display':'block'});
+		$('.rightCompare_wrap').css({'top': $('.smm_map_listItem').offset().top+'px','display':'block'});
 		$('.rightCompare_toggle').on('click', function(){
 			map.$smm_map_rightCompare.fadeOut('fast');
 		})
+		
+		//
+		var onOff = 1;
+		$('.rightButtonToggle').on('click', function(){
+			if (onOff == 1) {
+				$('.smm_map_rightCompare').stop(true,true).animate({'left': 0}, 500, function(){
+					$('.rightButtonToggle').css('background','url(./static/img/button_arrow.png) -12px 0 no-repeat');
+				});
+				onOff = 2;
+			} else {
+				$('.smm_map_rightCompare').stop(true,true).animate({'left': 162}, 500, function(){
+					$('.rightButtonToggle').css('background','url(./static/img/button_arrow.png) no-repeat');
+				});
+				onOff = 1;
+			}
 
+		})
 	/*全局数组，存放企业名称*/
 		var map_company = [];
 		var map_compareImg = [
@@ -162,6 +176,7 @@
 			//删除按钮
 			if ($(event.target).text() == '删除') {
 				for (var i = 0; i < map_company.length; i++) {
+					// map_company[i].name == $(event.target).parent().siblings('.rightCompare_listItems_content').text()
 					if(map_company[i].name == $(event.target).parent().siblings('.rightCompare_listItems_content').text()){
 						
 						//对应复选框改为未勾选
@@ -175,6 +190,12 @@
 						//从数组中删除该元素；
 						map_company.splice(i, 1);
 					}
+				}
+				if (onOff == 2 && map_company.length == 0) {
+					$('.smm_map_rightCompare').stop(true,true).animate({'left': 162}, 500, function(){
+						$('.rightButtonToggle').css('background','url(./static/img/button_arrow.png) no-repeat')
+					});
+					onOff = 1;
 				}
 			refreshCompare();
 			refreshComparePage();
@@ -197,10 +218,22 @@
 				refreshCompare();
 				checkboxReset();
 				refreshComparePage();
+				if (onOff == 2 && map_company.length == 0) {
+					$('.smm_map_rightCompare').stop(true,true).animate({'left': 162}, 500, function(){
+						$('.rightButtonToggle').css('background','url(./static/img/button_arrow.png) no-repeat')	
+					});
+					onOff = 1;
+				}
 			}
 			checkboxCheck();
 		})
-
+		// 隐藏按钮
+		$('.rightCompare_hide').on('click', function(){
+			$('.smm_map_rightCompare').stop(true,true).animate({'left': 162}, 500, function(){
+				$('.rightButtonToggle').css('background','url(./static/img/button_arrow.png) no-repeat')
+			});
+			onOff = 1;
+		})
 	/*列表勾选*/
 		$('.smm_map_content_listUl').on('click', function(event){
 
@@ -208,18 +241,33 @@
 				var map01 = {};
 				var html = '';
 				map01.id = $(event.target).parent().parent().attr('hello');//获取企业唯一id
-				map01.name = $(event.target).parent().next().text();//企业名称
+				map01.name = $(event.target).parent().siblings('.list_third').find('.listItems_subwrap div').text();//企业名称
+				// console.log($(event.target).parent().siblings('.list_third').find('.listItems_subwrap div').text())
 				html = $(event.target).parent().parent().prop('outerHTML');
 				map01.ul = html;//ul
 				// console.log($(event.target).parent().parent().html())
 				var arrayNum = map_company.push(map01);
+
+				if (onOff == 1) {
+					$('.smm_map_rightCompare').stop(true,true).animate({'left': 0}, 500, function(){
+						$('.rightButtonToggle').css('background','url(./static/img/button_arrow.png) -12px 0 no-repeat');			
+					});
+					onOff = 2;
+				}
 			}else{
 				for (var i = 0; i < map_company.length; i++) {
 					if(map_company[i].id == $(event.target).parent().parent().attr('hello')){
 						map_company.splice(i, 1);
 					}
 				}
-			}
+
+				if (onOff == 2 && map_company.length == 0) {
+					$('.smm_map_rightCompare').stop(true,true).animate({'left': 162}, 500, function(){
+						$('.rightButtonToggle').css('background','url(./static/img/button_arrow.png) no-repeat')	
+					});
+					onOff = 1;
+				}
+			}	
 			checkboxCheck();
 			refreshCompare();
 		})
@@ -265,6 +313,7 @@
 
 		//refreshComparePage 对比页刷新
 		function refreshComparePage() {
+			
 			//添加对比内容到对比页
 			var html = '';
 			for (var i = 0; i < map_company.length; i++) {
@@ -294,6 +343,18 @@
 				});
 			};
 		}
- 	}//onload
+
+	/*分页部分*/
+	$(".paginationWrap").createPage({
+        pageCount:100,
+        current:1,
+        backFn:function(p){
+            console.log(p);
+        }
+    });
+
+    /*排序功能*/
+
+ }//onload
 	
 })()
